@@ -1,0 +1,184 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    line-height: 1.5;
+    font-style: normal;
+    padding: 5px;
+    margin: 5px;
+    background: #0b0b0c;
+    color: #f5f5f7;
+}
+
+.container {
+  display: grid; /* Turns this div into a CSS Grid layout */
+  grid-template-areas:   /* Defines the layout structure */
+    'header header'
+    'nav_bar nav_bar'
+    'main main-img'
+    'footer footer';
+}
+
+/* Places each element into the correct area of the grid */
+.header {
+   grid-area: header; 
+}
+.nav_bar {
+   grid-area: nav_bar; 
+   display: flex; /* Uses Flexbox for internal layout */
+   justify-content: right;   /* Right aligns the content */
+}
+.main {
+  grid-area: main; 
+}
+.main_img {
+   grid-area: main-img; 
+}
+.footer {
+   grid-area: footer;
+}
+
+#logo {
+    width: 18%;
+    display: block;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f5f5f7;
+    font-weight: 400;
+    padding: 8px 10px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+}
+
+.active {
+    color: #92ad70;
+}
+
+nav a:hover {
+    border-color: #4d5c3b;
+}
+
+#cta {
+    background: #92ad70;
+    color: #0b0b0c;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+#cta:hover {
+    background: #4d5c3b;
+    color: #f5f5f7;
+}
+
+
+footer {
+    border-top: 1px solid rgba(245, 245, 247, .12);
+    padding: 18px 16px;
+    text-align: center;
+    color: rgba(245, 245, 247, .72);
+}
+
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: fit-content;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+form * {
+  margin: auto;
+  text-align: center;
+}
+
+#readMore, #readLess {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    background-color: black;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#readMore:hover, #readLess:hover {
+    background-color: gray;
+}
+
+
+#longIntro {
+    display: none;
+}
+
+#readLess {
+    display: none;
+}
+
+/* Hide form initially */
+#purchaseForm {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+/* Buttons */
+.buyBtn {
+    padding: 6px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.buyBtn:hover {
+    background-color: gray;
+}
+
+/* Form styling */
+input {
+    padding: 6px;
+    width: 200px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.day {
+    border: 1px solid #444;
+    padding: 10px;
+    min-height: 70px;
+    text-align: center;
+}
+
+.cal-header {
+    font-weight: bold;
+    background-color: #222;
+}
+
+.empty {
+    border: none;
+}
+
+.available {
+    background-color: #92ad70;
+    color: black;
+    border-radius: 8px;
+}
+
+.available button {
+    margin-top: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+}
