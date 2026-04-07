@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hannah Li">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../static/script.js" defer></script>
+    <title>MonoMuse</title>
+</head>
+<body onload="addYear();">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Logo"> 
+        </header>
+
+        <nav id="navbar" class="nav_bar">
+            <a href="../index.html">Home</a>
+            <div class="dropdown">
+                <a href="explore.html" class="dropbtn">Explore ▾</a>
+                <div class="dropdown-content">
+                    <a href="membership.html" class="active">Membership</a>
+                    <a href="donation.html">Donations</a>
+                </div>
+            </div>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a id="cta" href="buytickets.html">Buy Tickets</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+        </nav>
+
+        <main class="main">
+            <div class="support-header">
+                <h1>Support the Arts</h1>
+                <p>Become a member today and enjoy unlimited access to our galleries, exclusive events, and more.</p>
+            </div>
+
+            <div class="membership-container">
+                <div class="membership-card" id="tier-individual" onclick="selectTier('individual')">
+                    <h3 class="tier-title">Individual</h3>
+                    <p class="price">$50 / Year</p>
+                    <ul class="benefits">
+                        <li>Unlimited free admission</li>
+                        <li>10% Museum Shop discount</li>
+                    </ul>
+                </div>
+
+                <div class="membership-card" id="tier-patron" onclick="selectTier('patron')">
+                    <h3 class="tier-title">Patron</h3>
+                    <p class="price">$150 / Year</p>
+                    <ul class="benefits">
+                        <li>All Individual benefits</li>
+                        <li>2 Guest passes per visit</li>
+                        <li>Exclusive exhibition previews</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="action-area">
+                <button id="cta" onclick="processSelection()">Join Now</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>

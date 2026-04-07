@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hannah Li">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0-beta.min.js"></script>
+    <script src="../static/script.js" defer></script>
+    <title>Buy Tickets - MonoMuse</title>
+</head>
+
+<body onload="addYear();">
+<div class="container">
+
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo"> 
+    </header>
+
+    <nav id = "navbar"class="nav_bar">
+        <a href="../index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="exhibitions.html">Exhibitions</a>
+        <a id="cta" href="buytickets.html">Buy Tickets</a>
+        <a href = "javascript:void(0);" class = "icon" onclick = "toggleNav()">&#9776;</a>
+
+    </nav>
+
+    <main class="main">
+
+        <!-- Ticket Prices (KEEP YOUR TABLE) -->
+        <h2>Ticket Prices</h2>
+        <table>
+            <tr>
+                <th>Ticket Type</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Adult</td>
+                <td>General admission</td>
+                <td>$18</td>
+            </tr>
+            <tr>
+                <td>Student</td>
+                <td>Student ID required</td>
+                <td>$10</td>
+            </tr>
+            <tr>
+                <td>Member</td>
+                <td>Member ID required</td>
+                <td>$8</td>
+            </tr>
+        </table>
+
+
+        <!-- Schedule Table (NEW) -->
+        <h2>April 2026</h2>
+
+        <div class="calendar">
+
+            <!-- Header row -->
+            <div class="day cal-header">Sun</div>
+            <div class="day cal-header">Mon</div>
+            <div class="day cal-header">Tue</div>
+            <div class="day cal-header">Wed</div>
+            <div class="day cal-header">Thu</div>
+            <div class="day cal-header">Fri</div>
+            <div class="day cal-header">Sat</div>
+
+            <!-- Week 1 -->
+            <div class="day empty"></div>
+            <div class="day empty"></div>
+            <div class="day empty"></div>
+
+            <div class="day available">1<br><button class="buyBtn" data-date="April 1">Buy</button></div>
+            <div class="day available">2<br><button class="buyBtn" data-date="April 2">Buy</button></div>
+            <div class="day available">3<br><button class="buyBtn" data-date="April 3">Buy</button></div>
+            <div class="day available">4<br><button class="buyBtn" data-date="April 4">Buy</button></div>
+
+            <!-- Week 2 -->
+            <div class="day available">5<br><button class="buyBtn" data-date="April 5">Buy</button></div>
+            <div class="day available">6<br><button class="buyBtn" data-date="April 6">Buy</button></div>
+            <div class="day available">7<br><button class="buyBtn" data-date="April 7">Buy</button></div>
+            <div class="day available">8<br><button class="buyBtn" data-date="April 8">Buy</button></div>
+            <div class="day available">9<br><button class="buyBtn" data-date="April 9">Buy</button></div>
+            <div class="day available">10<br><button class="buyBtn" data-date="April 10">Buy</button></div>
+            <div class="day available">11<br><button class="buyBtn" data-date="April 11">Buy</button></div>
+
+            <!-- Week 3 -->
+            <div class="day available">12<br><button class="buyBtn" data-date="April 12">Buy</button></div>
+            <div class="day available">13<br><button class="buyBtn" data-date="April 13">Buy</button></div>
+            <div class="day available">14<br><button class="buyBtn" data-date="April 14">Buy</button></div>
+            <div class="day available">15<br><button class="buyBtn" data-date="April 15">Buy</button></div>
+            <div class="day available">16<br><button class="buyBtn" data-date="April 16">Buy</button></div>
+            <div class="day available">17<br><button class="buyBtn" data-date="April 17">Buy</button></div>
+            <div class="day available">18<br><button class="buyBtn" data-date="April 18">Buy</button></div>
+
+            <!-- Week 4 -->
+            <div class="day available">19<br><button class="buyBtn" data-date="April 19">Buy</button></div>
+            <div class="day available">20<br><button class="buyBtn" data-date="April 20">Buy</button></div>
+            <div class="day available">21<br><button class="buyBtn" data-date="April 21">Buy</button></div>
+            <div class="day available">22<br><button class="buyBtn" data-date="April 22">Buy</button></div>
+            <div class="day available">23<br><button class="buyBtn" data-date="April 23">Buy</button></div>
+            <div class="day available">24<br><button class="buyBtn" data-date="April 24">Buy</button></div>
+            <div class="day available">25<br><button class="buyBtn" data-date="April 25">Buy</button></div>
+
+            <!-- Week 5 -->
+            <div class="day available">26<br><button class="buyBtn" data-date="April 26">Buy</button></div>
+            <div class="day available">27<br><button class="buyBtn" data-date="April 27">Buy</button></div>
+            <div class="day available">28<br><button class="buyBtn" data-date="April 28">Buy</button></div>
+            <div class="day available">29<br><button class="buyBtn" data-date="April 29">Buy</button></div>
+            <div class="day available">30<br><button class="buyBtn" data-date="April 30">Buy</button></div>
+
+            <!-- trailing empty cells -->
+            <div class="day empty"></div>
+            <div class="day empty"></div>
+
+        </div>
+
+        <!-- Purchase Form (FROM checkout.html) -->
+        <div id="purchaseForm">
+            <h2>Purchase Tickets</h2>
+            <form id="ticketForm">
+                <label>Name:</label><br>
+                <input type="text" required><br><br>
+
+                <label>Email:</label><br>
+                <input type="email" required><br><br>
+                
+                <label>Ticket Type:</label><br>
+                <select id="ticketType" required>
+                    <option value="18">Adult ($18)</option>
+                    <option value="10">Student ($10)</option>
+                    <option value="8">Member ($8)</option>
+                </select><br><br>
+
+                <label>Number of Tickets:</label><br>
+                <input type="number" id = "ticketQuantity" min="1" required><br><br>
+
+                <label>Selected Date:</label><br>
+                <input type="text" id="selectedDate" readonly><br><br>
+
+                <label for="zipCode">Zip Code (Optional):</label><br>
+                <input type="text" id="zipCode" placeholder="12345" maxlength="5"><br>
+                <small id="zipError" style="color: red; display: none;">Zip code must be 5 digits.</small><br><br>
+
+                <div style="text-align: center;">
+                    <input type="checkbox" id="mailingList" style="width: auto; margin-right: 10px;">
+                    <label for="mailingList">Join our mailing list for museum updates!</label>
+                </div><br>
+
+                <div id = "totalPriceDisplay"></div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p id="copyYear"></p>
+    </footer>
+
+</div>
+</body>
+</html>

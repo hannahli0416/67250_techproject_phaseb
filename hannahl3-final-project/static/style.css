@@ -1,0 +1,532 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    line-height: 1.5;
+    font-style: normal;
+    padding: 5px;
+    margin: 5px;
+}
+
+body {
+    background: #0b0b0c;
+    color: #f5f5f7;
+}
+
+.container {
+  display: grid; /* Turns this div into a CSS Grid layout */
+  grid-template-areas:   /* Defines the layout structure */
+    'header header'
+    'nav_bar nav_bar'
+    'main main-img'
+    'footer footer';
+}
+
+
+
+/* Places each element into the correct area of the grid */
+.header {
+   grid-area: header; 
+}
+.nav_bar {
+   grid-area: nav_bar; 
+   display: flex; /* Uses Flexbox for internal layout */
+   justify-content: right;   /* Right aligns the content */
+}
+
+.nav_bar .icon {
+    display: none; /* Hides the hamburger icon by default */
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px 10px;
+}
+
+.main {
+    overflow: hidden;
+  grid-area: main; 
+}
+.main_img {
+   grid-area: main-img; 
+}
+.footer {
+   grid-area: footer;
+}
+
+#logo {
+    width: 18%;
+    display: block;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f5f5f7;
+    font-weight: 400;
+    padding: 8px 10px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+}
+
+.active {
+    color: #92ad70;
+}
+
+nav a:hover {
+    border-color: #4d5c3b;
+}
+
+#cta {
+    background: #92ad70;
+    color: #0b0b0c;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+#cta:hover {
+    background: #4d5c3b;
+    color: #f5f5f7;
+}
+
+.buy-link {
+    color: #92ad70;
+
+}
+
+footer {
+    border-top: 1px solid rgba(245, 245, 247, .12);
+    padding: 18px 16px;
+    text-align: center;
+    color: rgba(245, 245, 247, .72);
+}
+
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: fit-content;
+}
+
+tr:nth-child(even) {
+  background-color: #1a1a1c;
+  color: #f5f5f7;
+}
+
+form * {
+  margin: auto;
+  text-align: center;
+}
+
+#readMore, #readLess {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    background-color: black;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#readMore:hover, #readLess:hover {
+    background-color: gray;
+}
+
+
+#longIntro {
+    display: none;
+}
+
+#readLess {
+    display: none;
+}
+
+/* Hide form initially */
+#purchaseForm {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+/* Buttons */
+.buyBtn {
+    padding: 6px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.buyBtn:hover {
+    background-color: gray;
+}
+
+/* Form styling */
+input {
+    padding: 6px;
+    width: 200px;
+}
+
+
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.day {
+    border: 1px solid #444;
+    padding: 10px;
+    min-height: 70px;
+    text-align: center;
+}
+
+.cal-header {
+    border: none;
+    background-color: transparent; 
+    min-height: auto;
+    padding-bottom: 5px;
+    
+    font-weight: bold;
+    color: #f5f5f7;
+    text-align: center;
+}
+
+.empty {
+    border: none;
+}
+
+.available {
+    background-color: #92ad70;
+    color: black;
+    border-radius: 8px;
+}
+
+.available button {
+    margin-top: 5px;
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+#ticketType, #ticketQuantity {
+    padding: 8px;
+    background-color: #1a1a1c;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+    width: 220px;
+}
+
+#totalPriceDisplay {
+    color: #92ad70;
+}
+
+input[type="checkbox"] {
+    width: auto !important;
+    cursor: pointer;
+}
+
+#zipCode {
+    background-color: #1a1a1c;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.hours-section {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid rgba(245, 245, 247, 0.12);
+    text-align: center;
+}
+
+.hours-container {
+    max-width: 400px;
+    margin: 20px auto;
+    font-weight: 300;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(245, 245, 247, 0.05);
+}
+
+.hours-row span:first-child {
+    color: #92ad70;
+    font-weight: 400;
+}
+
+.hours-row:last-child {
+    border-bottom: none;
+}
+
+.dynamic-hero {
+    width: 100%;             /* Starts as wide as the screen/container */
+    height: auto;            /* Maintains the correct aspect ratio */
+    display: block;          /* Removes extra space at the bottom of the image */
+    margin: 0 auto 20px auto; /* Centers it and adds space below */
+    max-width: 1200px;       
+}
+
+@media only screen and (max-width: 650px) {
+    .container {
+        display: block; /* Stacks the sections vertically on smaller screens */
+    }
+
+    #logo {
+        width: 50%;
+        margin: auto;
+    }
+
+    .nav_bar {
+        flex-direction: column; /* Stacks nav links vertically */
+        align-items: center; /* Centers nav links */
+    }
+
+    .nav_bar a {
+        margin: 5px 0; /* Adds spacing between nav links */
+    }
+
+
+    /* Hide all links except the first one */
+    .nav_bar a:not(:first-child):not(.icon) {
+        display: none;
+    }
+
+    /* Show hamburger icon */
+    .nav_bar .icon {
+        display: block;
+    }
+
+    /* If nav is toggled */
+    .nav_bar.responsive {
+        position: relative;
+    }
+
+    .nav_bar.responsive a {
+        display: block !important;
+        text-align: left;
+        margin: 5px 0;
+    }
+
+    .nav_bar.responsive a.icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .main {
+        padding: 10px; /* Adds padding for better spacing on smaller screens */
+    }
+
+    table {
+        width: 100%; /* Makes tables full width on smaller screens */
+        display: block; /* Allows horizontal scrolling if needed */
+        overflow-x: auto; /* Enables horizontal scrolling */
+    }
+
+    th, td {
+        padding: 8px; /* Reduces padding for better fit on smaller screens */
+    }
+
+    .calendar {
+        grid-template-columns: repeat(7, 1fr); /* Changes calendar to 2 columns on smaller screens */
+    }
+
+    .day {
+        min-height: 50px; /* Reduces minimum height for calendar days */
+    }
+
+    .available button {
+        padding: 4px 6px; /* Reduces button padding for better fit on smaller screens */
+        font-size: 10px; /* Reduces font size for better fit on smaller screens */
+    }
+
+    input {
+        width: 100%; /* Makes input fields full width on smaller screens */
+    }
+
+    #purchaseForm {
+        padding: 10px; /* Reduces padding for better fit on smaller screens */
+    }
+
+}
+
+/* Responsive YouTube video */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-top: 25px;
+    height: 0;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+#map {
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+
+.exhibition-block {
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+}
+
+.image-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.image-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.image-scroll-container img {
+    flex: 0 0 70%;            /* Each image takes up 80% of the width */
+    scroll-snap-align: center; /* Snaps to the center of the screen */
+    border-radius: 8px;
+    height: 400px;            /* Fixed height keeps it looking like a gallery */
+    object-fit: cover;        /* Prevents stretching */
+    background: #1a1a1c;
+}
+
+.support-section {
+    width: 100%;
+    clear: both;
+    margin-top: 60px;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(245, 245, 247, 0.12);
+    text-align: center;
+}
+
+.support-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.support-card {
+    flex: 1; /* Both cards take up equal width */
+    background: #1a1a1c; /* Slightly lighter background for contrast */
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(245, 245, 247, 0.05);
+}
+
+.support-card h2 {
+    margin-top: 0;
+    color: #f5f5f7; /* White text for these internal headers */
+    font-size: 1.2rem;
+}
+
+/* 1. Hide the menu by default */
+.dropdown-content {
+    display: none;        /* This hides the links */
+    position: absolute;   /* This makes it float over the content below */
+    background-color: #1a1a1c; 
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 100;
+    border-radius: 8px;
+    padding: 10px 0;      /* Adds a little internal spacing */
+}
+
+/* 2. Show the menu ONLY when hovering over the parent 'dropdown' div */
+.dropdown:hover .dropdown-content {
+    display: block;       /* This makes the links appear */
+}
+
+/* 3. Ensure the links inside stack vertically */
+.dropdown-content a {
+    display: block;
+    text-align: left;
+    padding: 12px 16px;
+    color: #f5f5f7 !important;
+}
+
+/* Container to spread boxes equally */
+.membership-container {
+    display: flex;
+    justify-content: space-evenly; /* Spreads cards with equal space around them */
+    align-items: stretch;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Individual Card Styling */
+.membership-card {
+    flex: 1; /* Makes both boxes take up equal width */
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #0b0b0c;
+}
+
+/* Hover Effect */
+.membership-card:hover {
+    border-color: #92ad70;
+    transform: translateY(-5px);
+}
+
+/* Selection Highlight */
+.membership-card.selected {
+    border: 2px solid #92ad70;
+    background-color: rgba(146, 173, 112, 0.05);
+    box-shadow: 0 0 15px rgba(146, 173, 112, 0.2);
+}
+
+.tier-title {
+    color: #92ad70;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.benefits {
+    text-align: left;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.benefits li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.action-area {
+    text-align: center;
+    margin-top: 30px;
+}

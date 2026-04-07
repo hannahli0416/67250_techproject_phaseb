@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hannah Li">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-4.0.0-beta.min.js"></script>
+    <script src="../static/script.js" defer></script>
+    <title>Donate - MonoMuse</title>
+</head>
+<body onload="addYear();">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Logo"> 
+        </header>
+
+        <nav id="navbar" class="nav_bar">
+            <a href="../index.html">Home</a>
+            <div class="dropdown">
+                <a href="explore.html" class="dropbtn">Explore ▾</a>
+                <div class="dropdown-content">
+                    <a href="membership.html">Membership</a>
+                    <a href="donation.html" class="active">Donations</a>
+                </div>
+            </div>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a id="cta" href="buytickets.html">Buy Tickets</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+        </nav>
+
+        <main class="main">
+            <h1>Make a Gift</h1>
+            <p>Your contribution helps us keep the arts accessible to the community. Every gift makes a difference.</p>
+
+            <form id="donationForm" style="max-width: 400px; margin: 40px auto; text-align: center;">
+                <label>Select Amount:</label><br>
+                <div style="display: flex; gap: 10px; justify-content: center; margin: 15px 0;">
+                    <button type="button" class="buyBtn" onclick="$('#customAmount').val(25)">$25</button>
+                    <button type="button" class="buyBtn" onclick="$('#customAmount').val(50)">$50</button>
+                    <button type="button" class="buyBtn" onclick="$('#customAmount').val(100)">$100</button>
+                </div>
+                
+                <input type="number" id="customAmount" placeholder="Custom Amount" style="width: 100%; margin-bottom: 20px;">
+                
+                <label>Designate my gift to:</label><br>
+                <select style="width: 100%; margin-bottom: 20px;">
+                    <option>General Fund</option>
+                    <option>Education & Workshops</option>
+                    <option>Special Exhibitions</option>
+                </select>
+
+                <button type="submit" id="cta" style="width: 100%;">Complete Donation</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+
+    <script>
+        $("#donationForm").submit(function(e) {
+            e.preventDefault();
+            const amount = $("#customAmount").val();
+            if(!amount) { alert("Please enter an amount."); return; }
+            alert(`Thank you for your donation of $${amount}!`);
+            window.location.href = "../index.html";
+        });
+    </script>
+</body>
+</html>

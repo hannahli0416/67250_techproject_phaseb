@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hannah Li">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../static/script.js" defer></script>
+    <title>MonoMuse</title>
+</head>
+
+<body onload = "addYear();">
+    <div class = "container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo"> 
+        </header>
+        <nav id = "navbar"class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a id="cta" href="buytickets.html">Buy Tickets</a>
+            <a href = "javascript:void(0);" class = "icon" onclick = "toggleNav()">&#9776;</a>
+
+        </nav>
+
+        <main class="main">
+            <div class="exhibition-block">
+                <div class="exhibition-info">
+                    <h2>Exhibition 1: Black / White / Infinite</h2>
+                    <p>
+                        By stripping away the distraction of color, Black / White / Infinite forces the viewer to confront the fundamental elements of visual language: light, shadow, form, and texture. This collection challenges the notion that a limited palette results in limited expression. Instead, it suggests that within the binary of black and white lies an infinite spectrum of gray, capable of conveying profound emotional weight and architectural precision.
+                    </p>
+                </div>
+                <div class="image-scroll-container">
+                    <img src="../static/exhibition1-1.png" alt="Exhibition 1 View 1">
+                    <img src="../static/exhibition1-2.png" alt="Exhibition 1 View 2">
+                </div>
+                
+            </div>
+
+            <div class="exhibition-block">
+                <div class="exhibition-info">
+                    <h2>Exhibition 2: Blue Silence</h2>
+                    <p>Blue Silence is an exploration of the most elusive color in the natural world. While blue is the color of the vast sky and the deep sea, it is rarely found in the earth itself. This exhibition focuses on blue not as a pigment, but as an environmental condition. Through the use of neon, LED, and natural light filtered through cobalt glass, the gallery space is transformed into a meditative "pressure chamber" of hue, designed to lower the heart rate and quiet the internal monologue of the viewer.
+                    </p>
+                </div>
+                <div class="image-scroll-container">
+                    <img src="../static/exhibition2-1.jpg" alt="Exhibition 2 View 1">
+                    <img src="../static/exhibition2-2.jpg" alt="Exhibition 2 View 2">
+                </div>
+            </div>
+
+            <a id="cta" href="buytickets.html">Buy Tickets</a>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>

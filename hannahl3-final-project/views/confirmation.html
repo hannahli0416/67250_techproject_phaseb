@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hannah Li">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../static/script.js" defer></script>
+    <title>Confirmation</title>
+</head>
+<body onload="displayOrderDetails();">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Logo"> 
+        </header>
+
+        <main class="main" style="text-align: center; padding: 50px 20px;">
+            <h1 style="color: #92ad70;">Order Confirmed!</h1>
+            <p style="font-size: 1.2em;">Thank you, <span id="conf-name"></span>!</p>
+            
+            <div style="border: 1px solid #444; padding: 20px; display: inline-block; margin-top: 20px; border-radius: 12px; background: #1a1a1c;">
+                <h3>Order Summary</h3>
+                <p><strong>Visit Date:</strong> <span id="conf-date"></span></p>
+                <p style="font-size: 1.5em; color: #92ad70;"><strong>Total Paid: $<span id="conf-total"></span></strong></p>
+                <p style="font-size: 0.9em; color: rgba(245,245,247,0.6);">A receipt has been sent to your email.</p>
+            </div>
+
+            <br><br>
+            <a href="../index.html" id="cta">Return Home</a>
+        </main>
+
+        <footer class="footer">
+            <p>© 2026 MonoMuse. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function displayOrderDetails() {
+            // Get data from the URL
+            const params = new URLSearchParams(window.location.search);
+            
+            document.getElementById('conf-name').innerText = params.get('name') || "Guest";
+            document.getElementById('conf-date').innerText = params.get('date') || "TBD";
+            document.getElementById('conf-total').innerText = params.get('total') || "0";
+        }
+    </script>
+</body>
+</html>
